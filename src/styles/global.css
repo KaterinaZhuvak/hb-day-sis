@@ -1,0 +1,18 @@
+
+/* Легка паперова фактура для всього сайту */
+body {
+  background-color: #f6f0e8;
+}
+
+/* Текстура поверх фону, але під вмістом */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+background-image: url('../assets/photos//textures/grain.svg');
+  background-repeat: repeat;
+  opacity: 0.12;
+}

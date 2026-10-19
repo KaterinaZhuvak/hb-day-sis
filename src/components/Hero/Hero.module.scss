@@ -1,0 +1,301 @@
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100svh;
+  padding: 110px 24px 90px;
+  overflow: hidden;
+
+  background-color: #59634d;
+  background-image:
+    linear-gradient(
+      rgb(42 43 30 / 24%),
+      rgb(42 43 30 / 38%)
+    ),
+    url('../../assets/photos/textures/hero-forest.png');
+
+  background-position: center;
+  background-size: cover;
+  color: #f6f0e8;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 15%,
+      rgb(36 39 27 / 22%) 100%
+    );
+}
+
+.scrapbook {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(100%, 1000px);
+  min-height: 570px;
+  padding: 70px 24px;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  animation: appear 1s ease both;
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: #e9e0d0;
+}
+
+.title {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.76;
+  letter-spacing: -0.055em;
+  color: #f6f0e8;
+  text-shadow: 0 3px 25px rgb(0 0 0 / 12%);
+}
+
+.title span {
+  display: block;
+  margin-top: 16px;
+}
+
+.subtitle {
+  margin: 28px 0 0;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: #e9e0d0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin: 28px auto 20px;
+  color: #e9e0d0;
+  font-size: 1.1rem;
+}
+
+.divider span {
+  width: 40px;
+  height: 1px;
+  background-color: rgb(233 224 208 / 65%);
+}
+
+.description {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f6f0e8;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 38px;
+  padding: 16px 27px;
+
+  border: 1px solid rgb(89 99 77 / 30%);
+  border-radius: 3px;
+
+  background-color: #e9e0d0;
+  color: #59634d;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background-color: #f6f0e8;
+  box-shadow: 0 9px 24px rgb(0 0 0 / 15%);
+}
+
+.button:focus-visible {
+  outline: 2px solid #f6f0e8;
+  outline-offset: 5px;
+}
+
+.decoration {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.fern {
+  bottom: 5%;
+  left: 0;
+  width: clamp(90px, 16vw, 170px);
+  transform: rotate(-12deg);
+}
+
+.flower {
+  top: 8%;
+  right: 5%;
+  width: clamp(65px, 10vw, 110px);
+  transform: rotate(12deg);
+}
+
+.stars {
+  top: 12%;
+  left: 7%;
+  width: clamp(75px, 12vw, 130px);
+  opacity: 0.9;
+}
+
+.bottomNote {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-align: center;
+  color: rgb(246 240 232 / 75%);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 100px 18px 70px;
+    background-position: 55% center;
+  }
+
+  .scrapbook {
+    min-height: 500px;
+    padding: 55px 4px;
+  }
+
+  .eyebrow {
+    margin-bottom: 23px;
+    font-size: 0.59rem;
+    letter-spacing: 0.13em;
+  }
+
+  .title {
+    font-size: clamp(3.6rem, 16vw, 5.5rem);
+  }
+
+  .title span {
+    margin-top: 13px;
+  }
+
+  .subtitle {
+    margin-top: 25px;
+    font-size: 0.61rem;
+    letter-spacing: 0.12em;
+  }
+
+  .description {
+    font-size: 1.12rem;
+  }
+
+  .button {
+    margin-top: 30px;
+    padding: 14px 19px;
+    font-size: 0.75rem;
+  }
+
+  .fern {
+    bottom: 2%;
+    left: -20px;
+    width: 95px;
+    opacity: 0.55;
+  }
+
+  .flower {
+    top: 3%;
+    right: -8px;
+    width: 62px;
+    opacity: 0.65;
+  }
+
+  .stars {
+    top: 5%;
+    left: 0;
+    width: 65px;
+    opacity: 0.65;
+  }
+
+  .bottomNote {
+    font-size: 0.48rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+
+  .button {
+    transition: none;
+  }
+}
