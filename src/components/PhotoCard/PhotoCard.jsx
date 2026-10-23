@@ -1,49 +1,48 @@
-
 import styles from './PhotoCard.module.scss';
 
 function PhotoCard({
-  memory,
+  src,
+  alt,
+  title,
+  description,
+  index,
+  size = 'medium',
   onClick,
-  className = '',
 }) {
-  const {
-    image,
-    alt,
-    title,
-    caption,
-  } = memory;
+  const number = String(index ?? 1).padStart(2, '0');
 
   return (
     <button
       type="button"
-      className={`${styles.card} ${className}`}
+      className={`${styles.card} ${styles[size] ?? styles.medium}`}
       onClick={onClick}
-      aria-label={`Відкрити спогад: ${title}`}
+      aria-label={`Відкрити фото: ${title || alt}`}
     >
-      <span className={styles.photoFrame}>
+      <div className={styles.imageWrapper}>
         <img
-          src={image}
-          alt={alt}
-          className={styles.photo}
+          src={src}
+          alt={alt || ''}
+          className={styles.image}
           loading="lazy"
         />
 
-        <span
-          className={styles.photoDecoration}
-          aria-hidden="true"
-        >
-          ✿
+        <span className={styles.number} aria-hidden="true">
+          {number}
         </span>
-      </span>
 
-      <span className={styles.cardTitle}>
-        {title}
-      </span>
-
-      {caption && (
-        <span className={styles.cardCaption}>
-          {caption}
+        <span className={styles.expandIcon} aria-hidden="true">
+          ↗
         </span>
+      </div>
+
+      {(title || description) && (
+        <div className={styles.caption}>
+          {title && <h3 className={styles.title}>{title}</h3>}
+
+          {description && (
+            <p className={styles.description}>{description}</p>
+          )}
+        </div>
       )}
     </button>
   );

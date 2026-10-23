@@ -1,78 +1,57 @@
 import styles from './Hero.module.scss';
 
 function Hero() {
-  const handleExplore = () => {
-    document
-      .getElementById('memories')
-      ?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className={styles.hero} id="home">
+    <section id="home" className={styles.hero}>
+      <div className={styles.background} aria-hidden="true" />
+
       <div className={styles.overlay} aria-hidden="true" />
 
-      <div className={styles.scrapbook}>
-        <img
-          src="/decorations/fern.svg"
-          alt=""
-          aria-hidden="true"
-          className={`${styles.decoration} ${styles.fern}`}
-        />
+      <div className={styles.content}>
+        <span className={styles.eyebrow}>
+          Для найріднішої людини
+        </span>
 
-        <img
-          src="/decorations/wildflower.svg"
-          alt=""
-          aria-hidden="true"
-          className={`${styles.decoration} ${styles.flower}`}
-        />
+        <span className={styles.decorativeLine} aria-hidden="true" />
 
-        <img
-          src="/decorations/little-stars.svg"
-          alt=""
-          aria-hidden="true"
-          className={`${styles.decoration} ${styles.stars}`}
-        />
+        <h1 className={styles.title}>
+          З днем
+          <br />
+          <span>народження,</span>
+          <br />
+          тату.
+        </h1>
 
-        <div className={styles.content}>
-          <p className={styles.eyebrow}>
-            ✧ З ДНЕМ НАРОДЖЕННЯ, МОЯ РІДНА ✧
-          </p>
-
-          <h1 className={styles.title}>
-            Twenty
-            <span>&amp; Blooming</span>
-          </h1>
-
-          <p className={styles.subtitle}>
-            Двадцять — і цілий світ попереду
-          </p>
-
-          <div className={styles.divider} aria-hidden="true">
-            <span />
-            ✿
-            <span />
-          </div>
-
-          <p className={styles.description}>
-            Ти — як квітка, що розквітає
-            <br />
-            у найкрасивішій порі свого життя.
-          </p>
-
-          <button
-            className={styles.button}
-            onClick={handleExplore}
-            type="button"
-          >
-            Відкрити наші спогади
-            <span aria-hidden="true"> →</span>
-          </button>
-        </div>
-
-        <p className={styles.bottomNote}>
-          MADE WITH LOVE · FOR YOUR TWENTIETH
+        <p className={styles.description}>
+          Про найважливіше не завжди легко сказати вголос.
+          Тому сьогодні — кілька слів, які йдуть від самого серця.
         </p>
+
+        <a href="#letter" className={styles.cta}>
+          <span>Прочитати листа</span>
+          <span className={styles.ctaArrow} aria-hidden="true">
+            ↗
+          </span>
+        </a>
       </div>
+
+      <div className={styles.bottomNote}>
+        <span className={styles.bottomLine} />
+        <span>З любов’ю, твоя донька</span>
+      </div>
+
+      <a
+        href="#memories"
+        className={styles.scrollIndicator}
+        aria-label="Перейти до спогадів"
+      >
+        <span className={styles.scrollText}>Гортай далі</span>
+        <span className={styles.scrollLine} />
+      </a>
+
+      <span className={styles.cornerDecoration} aria-hidden="true">
+        ✳
+      </span>
     </section>
   );
 }

@@ -2,50 +2,43 @@
 import styles from './Footer.module.scss';
 
 function Footer() {
-  const handleBackToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.flower} aria-hidden="true">
-          ✿
-        </div>
+        <span className={styles.ornament} aria-hidden="true">
+          ✦
+        </span>
 
         <p className={styles.message}>
-          Історія триває...
+          Найцінніше — це моменти, проведені разом.
         </p>
 
-        <p className={styles.subtitle}>
-          Ще більше спогадів, пригод і приводів бути щасливими.
-        </p>
-
-        <button
-          type="button"
+        <a
+          href="#home"
           className={styles.backToTop}
-          onClick={handleBackToTop}
+          aria-label="Повернутися на початок сторінки"
         >
-          Повернутися на початок
-          <span aria-hidden="true"> ↑</span>
-        </button>
+          <span className={styles.arrow} aria-hidden="true">
+            ↑
+          </span>
+          <span>На початок</span>
+        </a>
 
-        <div className={styles.divider} aria-hidden="true">
-          <span />
-          <span className={styles.dividerFlower}>❀</span>
-          <span />
+        <div className={styles.divider} />
+
+        <div className={styles.bottom}>
+          <a href="#home" className={styles.brand}>
+            З любов’ю, доця
+          </a>
+
+          <p className={styles.copyright}>
+            Створено з любов’ю ♡
+          </p>
+
+          <a href="#letter" className={styles.letterLink}>
+            Ще раз прочитати лист
+          </a>
         </div>
-
-        <p className={styles.signature}>
-          З любов'ю, для тебе ♡
-        </p>
-
-        <p className={styles.copyright}>
-          Twenty &amp; Blooming · Made with love
-        </p>
       </div>
     </footer>
   );

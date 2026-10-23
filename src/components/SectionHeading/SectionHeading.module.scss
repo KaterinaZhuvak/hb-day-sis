@@ -1,118 +1,122 @@
-
 .heading {
-  width: 100%;
-  max-width: 680px;
-  margin: 20px auto 48px;
-  color: #59634d;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 0;
+
+  width: 100%;
+  max-width: 660px;
+  margin-inline: auto;
 }
 
 .center {
+  align-items: center;
   text-align: center;
 }
 
 .left {
+  align-items: flex-start;
   text-align: left;
-
-  .divider {
-    margin-left: 0;
-  }
 }
 
 .eyebrow {
-  margin: 0 0 16px;
+  display: block;
 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.68rem;
+  margin-bottom: 18px;
+
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 10px;
   font-weight: 500;
-  line-height: 1.8;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
+  line-height: 1.6;
   text-transform: uppercase;
+}
 
-  color: #87947a;
+.decorativeLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 
-  span {
-    color: #b99c83;
-  }
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 22px;
+}
+
+.line {
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+.ornament {
+  color: var(--gold-light);
+  font-size: 12px;
+  line-height: 1;
 }
 
 .title {
   margin: 0;
 
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  color: var(--cream);
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 5.2vw, 66px);
   font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-
-  color: #59634d;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
   text-wrap: balance;
 }
 
 .description {
-  max-width: 520px;
-  margin: 20px auto 0;
+  max-width: 490px;
+  margin: 20px 0 0;
 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.9;
-
-  color: #777b68;
+  text-wrap: pretty;
 }
 
-.left .description {
-  margin-left: 0;
-  margin-right: 0;
+/* Left-aligned variant */
+
+.left .decorativeLine {
+  justify-content: flex-start;
 }
 
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  width: 140px;
-  margin-top: 28px;
+/* Responsive */
 
-  span:not(.dividerFlower) {
-    flex: 1;
-    height: 1px;
-    background-color: #b99c83;
-    opacity: 0.7;
-  }
-}
-
-.dividerFlower {
-  font-size: 1rem;
-  line-height: 1;
-  color: #b99c83;
-}
-
-@media (max-width: 480px) {
-  .heading {
-    margin-bottom: 36px;
-  }
-
+@media (max-width: 600px) {
   .eyebrow {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .decorativeLine {
+    max-width: 78px;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-size: clamp(38px, 10vw, 52px);
+    line-height: 1.12;
   }
 
   .description {
-    font-size: 0.88rem;
+    max-width: 340px;
+    margin-top: 15px;
+    font-size: 12px;
     line-height: 1.8;
-  }
-
-  .divider {
-    margin-top: 22px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heading {
+  .heading * {
     scroll-behavior: auto;
   }
 }
